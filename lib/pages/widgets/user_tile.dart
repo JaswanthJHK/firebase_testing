@@ -5,10 +5,14 @@ class UserTile extends StatelessWidget {
       {super.key,
       required this.text,
       required this.subText,
+      required this.deleteOntap,
+      required this.updateOntap,
       required this.age});
   final String text;
   final String subText;
   final int age;
+  final void Function()? deleteOntap;
+  final void Function()? updateOntap;
 
   @override
   Widget build(BuildContext context) {
@@ -54,16 +58,19 @@ class UserTile extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            Icon(
-              Icons.add,
-              color: textColor,
+            IconButton(
+              onPressed: updateOntap,
+              icon: Icon(Icons.edit),
             ),
             const SizedBox(
               width: 25,
             ),
-            Icon(
-              Icons.delete_outline,
-              color: textColor,
+            IconButton(
+              onPressed: deleteOntap,
+              icon: Icon(
+                Icons.delete_outline,
+                color: textColor,
+              ),
             )
           ],
         ),

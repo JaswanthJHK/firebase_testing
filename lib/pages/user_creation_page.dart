@@ -23,11 +23,8 @@ class _UserCreationPageState extends State<UserCreationPage> {
         .addUser(nameController.text, emailController.text, ageOfUser!);
   }
 
-  @override
-  void setState(VoidCallback fn) {
-    addUserTofirebase();
-    super.setState(fn);
-  }
+  
+ 
 
   @override
   Widget build(BuildContext context) {
